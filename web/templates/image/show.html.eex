@@ -1,0 +1,25 @@
+<h2>Show image</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @image.name %>
+  </li>
+
+  <li>
+    <strong>Size:</strong>
+    <%= @image.size %>
+  </li>
+  <li>
+    <strong>Image:</strong>
+    <img src="<%= image_path(@conn, :image, @image.id) %>" alt="<%= @image.name %>" />
+  </li>
+  <li>
+    <strong>Image type:</strong>
+    <%= @image.image_binary_type %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: image_path(@conn, :index) %>
