@@ -9,6 +9,11 @@ To start your Phoenix app:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+* GET `http://localhost:4000/images/generate` will consume a Json Endpoint and Store all images, this will redirect to /images/ after
+* GET `http://localhost:4000/images/` to list all images
+* GET `http://localhost:4000/images/:id` to show all images infos
+* DELETE `http://localhost:4000/images/:id` to delete an image
+
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
 ## Learn more
