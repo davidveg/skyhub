@@ -1,5 +1,5 @@
 defmodule Skyhub.JSONFetch do
-  
+
   def fetch do
     endpoint_to_consume
     |> HTTPoison.get
@@ -7,7 +7,7 @@ defmodule Skyhub.JSONFetch do
   end
 
   defp endpoint_to_consume do
-    "http://54.152.221.29/images.json"
+    Application.get_env(:skyhub, :url_to_call)
   end
 
   def handle_json({:ok, %{status_code: 200, body: body}}) do

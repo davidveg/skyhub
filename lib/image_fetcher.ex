@@ -26,7 +26,6 @@ defmodule Skyhub.ImageFetcher do
       %{"image_binary" => body, "image_binary_type" => get_content_type(headers)}
     )
     |> Repo.update!
-    |> IO.inspect
     {:noreply, []}
   end
 

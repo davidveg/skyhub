@@ -8,6 +8,7 @@ defmodule Skyhub.ImageController do
   alias Skyhub.ImageFetcher
   alias Skyhub.ImageConverter
   alias Skyhub.ExtractMap
+    alias Skyhub.Helper
 
   def index(conn, _params) do
     images = Repo.all(Image)
@@ -63,4 +64,5 @@ defmodule Skyhub.ImageController do
     JSONFetch.fetch
     |> ExtractMap.extract_from_body
   end
+
 end

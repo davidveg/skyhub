@@ -22,10 +22,9 @@ defmodule Skyhub.ImageConverter do
   # Server implementation
   def init(_), do: {:ok, []}
 
-  def handle_cast({image}, _state) do
+  def handle_cast({_image}, _state) do
     query = from i in Image
-    images = Repo.all(query)
-    for image <- images do
+    for image <- Repo.all(query) do
       create_new_file(image, "small")
       create_new_file(image, "medium")
       create_new_file(image, "large")

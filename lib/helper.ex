@@ -18,8 +18,7 @@ alias Skyhub.Image
   end
 
   def check_existence(params) do
-     count = Repo.all(from i in Image, where: i.name == ^params[:name], select: count(i.id))
-     count == [0]
+     [0] == Repo.all(from i in Image, where: i.name == ^params[:name], select: count(i.id))
   end
 
 end
